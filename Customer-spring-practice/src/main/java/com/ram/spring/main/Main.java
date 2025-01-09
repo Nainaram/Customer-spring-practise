@@ -17,6 +17,6 @@ public class Main {
 
 		gc.defCustomer();
 		pc.defCustomer();
-
+		cpx.close();
 	}
 }

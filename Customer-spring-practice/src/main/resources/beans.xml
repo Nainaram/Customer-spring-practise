@@ -14,13 +14,20 @@
 		<property name="type" value="PlatinumCustomer"></property>
 		<property name="address" ref="blr"></property>
 	</bean>
+	<!-- <bean id="hyd" class="com.ram.spring.address.Address"> <property name="city" 
+		value="Hyderabad"></property> <property name="state" value="Telangana"></property> 
+		</bean> <bean id="blr" class="com.ram.spring.address.Address"> <property 
+		name="city" value="bangalore"></property> <property name="state" value="Karnataka"></property> 
+		</bean> this is used when it is used in the setters are there or we can say 
+		for the setter injection -->
 	<bean id="hyd" class="com.ram.spring.address.Address">
-		<property name="city" value="Hyderabad"></property>
-		<property name="state" value="Telangana"></property>
+		<constructor-arg name="city" value="hyderabad" />
+		<constructor-arg name="state" value="Telangana" />
 	</bean>
 	<bean id="blr" class="com.ram.spring.address.Address">
-		<property name="city" value="bangalore"></property>
-		<property name="state" value="Karnataka"></property>
+		<constructor-arg name="city" value="bangalore" />
+		<constructor-arg name="state" value="Karnataka" />
 	</bean>
+
 
 </beans>
