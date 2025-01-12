@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="gc" class="com.ram.spring.model.GoldenCustomer">
-		<property name="name" value="Rahul"></property>
-		<property name="type" value="GoldenCustomer"></property>
-		<property name="address" ref="hyd"></property>
-	</bean>
-	<bean id="pc" class="com.ram.spring.model.PlatinumCustomer">
-		<property name="name" value="Navya"></property>
-		<property name="type" value="PlatinumCustomer"></property>
-		<property name="address" ref="blr"></property>
-	</bean>
-	<!-- <bean id="hyd" class="com.ram.spring.address.Address"> <property name="city" 
-		value="Hyderabad"></property> <property name="state" value="Telangana"></property> 
-		</bean> <bean id="blr" class="com.ram.spring.address.Address"> <property 
-		name="city" value="bangalore"></property> <property name="state" value="Karnataka"></property> 
-		</bean> this is used when it is used in the setters are there or we can say 
-		for the setter injection -->
-	<bean id="hyd" class="com.ram.spring.address.Address">
-		<constructor-arg name="city" value="hyderabad" />
-		<constructor-arg name="state" value="Telangana" />
-	</bean>
-	<bean id="blr" class="com.ram.spring.address.Address">
-		<constructor-arg name="city" value="bangalore" />
-		<constructor-arg name="state" value="Karnataka" />
-	</bean>
-
+	<context:component-scan base-package="com.ram.spring.model,com.ram.spring.address"/>
 
 </beans>

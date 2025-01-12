@@ -1,8 +1,14 @@
 package com.ram.spring.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import com.ram.spring.Interfaces.Customer;
 import com.ram.spring.address.Address;
 
+@Component
 public class GoldenCustomer implements Customer {
 
 	private Address address;
@@ -12,8 +18,8 @@ public class GoldenCustomer implements Customer {
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
+	@Autowired
+	public void setName(@Value("rahul") String name) {
 		this.name = name;
 	}
 
@@ -24,12 +30,13 @@ public class GoldenCustomer implements Customer {
 	public Address getAddress() {
 		return address;
 	}
-
-	public void setAddress(Address address) {
+	@Autowired
+	public void setAddress(@Qualifier("address") Address address) {
 		this.address = address;
 	}
-
-	public void setType(String type) {
+	
+	@Autowired
+	public void setType( @Value("golden customer") String type) {
 		this.type = type;
 	}
 

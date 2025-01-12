@@ -12,8 +12,8 @@ public class Main {
 
 		ClassPathXmlApplicationContext cpx = new ClassPathXmlApplicationContext("beans.xml");
 
-		Customer gc = (GoldenCustomer) cpx.getBean("gc");
-		Customer pc = (PlatinumCustomer) cpx.getBean("pc");
+		Customer gc = (GoldenCustomer) cpx.getBean("goldenCustomer");
+		Customer pc = (PlatinumCustomer) cpx.getBean("platinumCustomer");
 
 		gc.defCustomer();
 		pc.defCustomer();
